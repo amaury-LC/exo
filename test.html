@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>morpion</title>
+</head>
+
+<body>
+    <h1>morpion</h1>
+    <script>
+        function verification(verif, PartieDeJeux) {
+
+            //La boucle parcour le tableau des possibilitées de victoire
+
+            for (i = 0; i < 8; i++) {
+
+                //on verif la taille du tableau recuperer 
+
+                var TailleTableau = verif[i].length;
+
+
+
+                if (TailleTableau == 4) {
+
+                    //verif les differentes position du tableau Partiedejeux pour voir si il y une egalité avec les information de position inscrif dans le tableau verif
+
+                    if ((PartieDeJeux[verif[i][0]][verif[i][1]] == "rond") && (PartieDeJeux[verif[i][0]][verif[
+                                i][2]] ==
+                            "rond") && (PartieDeJeux[verif[i][0]][verif[i][3]] == "rond")) {
+
+                        alert('joueur1 à gagner !');
+
+                        return "gagner";
+
+
+
+
+                    } else if ((PartieDeJeux[verif[i][0]][verif[i][1]] == "croix") && (PartieDeJeux[verif[i][0]]
+                            [verif[
+                                i][2]] ==
+                            "croix") && (PartieDeJeux[verif[i][0]][verif[i][3]] == "croix")) {
+
+                        alert('joueur2 à gagner !');
+
+                        return "gagner";
+
+
+
+                    }
+
+
+
+
+
+                } else {
+
+                    //verif les differentes position du tableau Partiedejeux pour voir si il y une egalité avec les information de position inscrif dans le tableau verif
+
+                    if ((PartieDeJeux[verif[i][0]][verif[i][1]] == "rond") && (PartieDeJeux[verif[i][2]][verif[i][3]] ==
+                            "rond") && (PartieDeJeux[verif[i][4]][verif[i][5]] == "rond")) {
+
+                        alert('joueur1 à gagner !');
+
+                        return "gagner";
+
+
+
+                    } else if ((PartieDeJeux[verif[i][0]][verif[i][1]] == "croix") && (PartieDeJeux[verif[i][2]][verif[
+                            i][3]] == "croix") && (PartieDeJeux[verif[i][4]][verif[i][5]] == "croix")) {
+
+                        alert('joueur2 à gagner !');
+
+                        return "gagner";
+
+                    }
+
+
+
+
+
+                }
+
+
+
+            }
+        }
+
+
+
+        function ajouter(PartieDeJeux) {
+
+            Position = [0, 0, 0, 1, 0, 2, 1, 0, 1, 1, 1, 2, 2, 0, 2, 1, 2, 2];
+
+            PositionL = 0;
+            PositionC = 1;
+
+            while (true) {
+
+                var joueur = prompt(PartieDeJeux[Position[PositionL]][Position[PositionC]] + " a toi de jouer");
+
+                if (joueur == "rond" || joueur == "croix") {
+
+                    PartieDeJeux[Position[PositionL]][Position[PositionC]] = joueur;
+                    return PartieDeJeux;
+
+
+
+
+                } else if (joueur != "rond" || joueur != "croix") {
+
+                    if (PositionL <= 16 && PositionC <= 16) {
+
+                        PositionL += 2;
+                        PositionC += 2;
+                    } else {
+
+                        PositionL = 0;
+                        PositionC = 1;
+
+
+                    }
+
+
+
+                }
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+        }
+
+
+
+        function morpion() {
+
+            //les joueurs inscrivent leurs nom 
+            // var joueur1 = prompt('inscrivez votre nom joueur1');
+            // var joueur2 = prompt('inscrivez votre nom joueur2');
+
+            //variable qui dit au programme si le jeux doit continuer , si valeur est true le jeux s'arrête
+            var EtatJeux = false;
+            NombreTours = 0;
+
+            //tableau représentant le tableau de jeux
+            var PartieDeJeux = [
+                ['case1', 'case2', 'case3'],
+                ['case4', 'case5', 'case6'],
+                ['case7', 'case8', 'case9'],
+            ];
+
+
+            //verif chaque case commence le numero de la ligne et ensuite par les numero des cases pour les 3 premiere cases
+            // ensuite c'est le numero de la ligne et de la case
+
+            var verif = [
+                [0, 0, 1, 2],
+                [1, 0, 1, 2],
+                [2, 0, 1, 2],
+                [0, 0, 1, 0, 2, 0],
+                [0, 1, 1, 1, 2, 1],
+                [0, 2, 1, 2, 2, 2],
+                [0, 2, 1, 1, 2, 0],
+                [0, 0, 1, 1, 2, 2]
+            ]
+
+
+
+            while (!EtatJeux && NombreTours <= 8) {
+
+                NombreTours++;
+
+
+                //boucle verifie les possibilitées de victoire
+                var gagner = verification(verif, PartieDeJeux);
+
+
+                if (gagner == "gagner") {
+
+
+                    break
+                }
+
+
+                PartieDeJeux = ajouter(PartieDeJeux);
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+        }
+
+
+
+        morpion();
+
+
+        // })
+    </script>
+</body>
+
+</html>
