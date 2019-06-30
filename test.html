@@ -101,7 +101,7 @@
 
                 var joueur = prompt(PartieDeJeux[Position[PositionL]][Position[PositionC]] + " a toi de jouer");
 
-                if (joueur == "rond" || joueur == "croix") {
+                if ((joueur == "rond" || joueur == "croix") ) {
 
                     PartieDeJeux[Position[PositionL]][Position[PositionC]] = joueur;
                     return PartieDeJeux;
@@ -109,7 +109,9 @@
 
 
 
-                } else if (joueur != "rond" || joueur != "croix") {
+                }
+                
+                 else if (joueur != "rond" || joueur != "croix") {
 
                     if (PositionL <= 16 && PositionC <= 16) {
 
@@ -189,6 +191,8 @@
 
                 if (gagner == "gagner") {
 
+                    EtatJeux = true;
+
 
                     break
                 }
@@ -197,16 +201,11 @@
                 PartieDeJeux = ajouter(PartieDeJeux);
 
 
+            }
 
+            if(!EtatJeux){
 
-
-
-
-
-
-
-
-
+                alert("Match nul !")
             }
 
 
