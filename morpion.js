@@ -6,7 +6,7 @@ var PartieDeJeux = [
     ['case4', 'case5', 'case6'],
     ['case7', 'case8', 'case9'],
 ];
-NbPartie = 9;
+NbPartie = 8;
 var verif = [
     [0, 0, 1, 2],
     [1, 0, 1, 2],
@@ -43,8 +43,10 @@ function verification(verif, PartieDeJeux) {
 
                 document.getElementById("gagnant").innerHTML = "joueur1 à gagner !";
                 document.getElementById("gagnant").style.visibility = "visible";
+                PartiGagner = true;
 
                 return "gagner";
+
 
 
 
@@ -56,6 +58,7 @@ function verification(verif, PartieDeJeux) {
 
                 document.getElementById("gagnant").innerHTML = "joueur2 à gagner !";
                 document.getElementById("gagnant").style.visibility = "visible";
+                PartiGagner = true;
 
                 return "gagner";
 
@@ -76,6 +79,7 @@ function verification(verif, PartieDeJeux) {
 
                 document.getElementById("gagnant").innerHTML = "joueur1 à gagner !";
                 document.getElementById("gagnant").style.visibility = "visible";;
+                PartiGagner = true;
 
                 return "gagner";
 
@@ -88,6 +92,7 @@ function verification(verif, PartieDeJeux) {
 
                 document.getElementById("gagnant").innerHTML = "joueur2 à gagner !";
                 document.getElementById("gagnant").style.visibility = "visible";
+                PartiGagner = true;
 
                 return "gagner";
 
@@ -172,6 +177,7 @@ function remplirtableau(NumCase, cercle, croix) {
 
                     PartieDeJeux[i][j] = "x";
                 }
+                
 
 
             }
@@ -209,7 +215,11 @@ function init() {
 
 function game(NumCase, cercle, croix) {
 
-    if (NbPartie >= 0) {
+    if (NbPartie > 0) {
+
+        
+
+     
 
         remplirtableau(NumCase, cercle, croix);
         var gagne = verification(verif, PartieDeJeux);
@@ -221,8 +231,18 @@ function game(NumCase, cercle, croix) {
 
         }
 
+    } else if (NbPartie == 0 && !PartiGagner ) {
+
+        document.getElementById("gagnant").innerHTML = "PERDU !";
+        document.getElementById("gagnant").style.visibility = "visible";
+
+
     }
 
-    
+
 
 }
+
+// o x o
+// o x x
+// x o o
