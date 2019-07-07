@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>morpion</h1>
+        <h1 id="gagnant" style="visibility: hidden">b</h1>
+    </center>
+    <div style="margin-left : 550px">
+        <div style="display: flex">
+            <div id="case1" onclick="game('case1','cercle1', 'croix1')"  style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle1"  style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix1" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+            <div id="case2" onclick="game('case2','cercle2', 'croix2')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle2" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix2" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+            <div id="case3" onclick="game('case3','cercle3', 'croix3')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle3" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix3" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+        </div>
+        <div style="display: flex">
+            <div id="case4" onclick="game('case4','cercle4', 'croix4')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle4" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix4" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+            <div id="case5" onclick="game('case5','cercle5', 'croix5')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle5" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix5" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+            <div id="case6" onclick="game('case6','cercle6', 'croix6')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle6" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix6" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+        </div>
+        <div style="display: flex">
+            <div id="case7" onclick="game('case7','cercle7', 'croix7')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle7" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix7" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+            <div id="case8" onclick="game('case8','cercle8', 'croix8')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle8" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix8" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+            <div id="case9" onclick="game('case9','cercle9', 'croix9')" style="width: 150px;height: 150px;border : 2px solid black "><img id="cercle9" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display: none " src="cercle1.svg"><img id="croix9" style="width: 300px;height: 300px;margin-left: -70px;margin-top: -70px; display : none;  " src="croix.svg"></div>
+        </div>
+    </div>
+
+    
+
+<script src="morpion.js"></script>
+</body>
+</html>
